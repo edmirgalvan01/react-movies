@@ -1,0 +1,10 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.movieCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
