@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { API_KEY, API_URL } from "../../../../consts";
+import { discoverMovies } from "../../../services/movies.service";
+import { discoverShows } from "../../../services/show.service";
 import { ResponseOfMovies } from "../../../types/Movies";
 import { ResponseOfShows } from "../../../types/Shows";
 import { MovieCard } from "../../MovieCard/MovieCard";
@@ -11,15 +12,11 @@ export const Home = () => {
   const [tvShows, setTvShows] = useState<ResponseOfShows>();
 
   useEffect(() => {
-    fetch(`${API_URL}/discover/movie?api_key=${API_KEY}`)
-      .then((data) => data.json())
-      .then((response) => setMovies(response));
+    discoverMovies().then((data) => setMovies(movies));
   }, []);
 
   useEffect(() => {
-    fetch(`${API_URL}/discover/tv?api_key=${API_KEY}`)
-      .then((data) => data.json())
-      .then((response) => setTvShows(response));
+    discoverShows().then((data) => setTvShows(data));
   }, []);
 
   return (
