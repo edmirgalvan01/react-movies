@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { API_KEY, API_URL } from "../../../../consts";
 import { ResponseOfMovies } from "../../../types/Movies";
 import { ResponseOfShows } from "../../../types/Shows";
+import { MovieCard } from "../../MovieCard/MovieCard";
+import { ShowCard } from "../../ShowCard/ShowCard";
 import "./Home.css";
 
 export const Home = () => {
-  const navigate = useNavigate();
-
   const [movies, setMovies] = useState<ResponseOfMovies>();
   const [tvShows, setTvShows] = useState<ResponseOfShows>();
 
@@ -29,36 +28,14 @@ export const Home = () => {
       <ul className="listOfCards">
         <h2>Descubre nuevas peliculas</h2>
         {movies?.results.map((movie) => (
-          <li
-            key={movie.id}
-            className="movieCard"
-            onClick={() => navigate(`/movie/${movie.id}`)}
-          >
-            <img
-              style={{ maxWidth: "200px" }}
-              src={`http://image.tmdb.org/t/p/w500/${movie?.poster_path}`}
-              alt={`Imagen aluciva a la pelicula ${movie.title}`}
-            />
-            <strong>{movie.title}</strong>
-          </li>
+          <MovieCard key={movie.id} movie={movie} />
         ))}
       </ul>
 
       <ul className="listOfCards">
         <h2>Descubre nuevas series</h2>
         {tvShows?.results.map((show) => (
-          <li
-            key={show.id}
-            className="movieCard"
-            onClick={() => navigate(`/show/${show.id}`)}
-          >
-            <img
-              style={{ maxWidth: "200px" }}
-              src={`http://image.tmdb.org/t/p/w500/${show?.poster_path}`}
-              alt={`Imagen aluciva a la serie ${show.name}`}
-            />
-            <strong>{show.name}</strong>
-          </li>
+          <ShowCard key={show.id} show={show} />
         ))}
       </ul>
     </div>
