@@ -1,23 +1,12 @@
-import { useEffect, useState } from "react";
-import { discoverMovies } from "../../../services/movies.service";
-import { discoverShows } from "../../../services/show.service";
-import { ResponseOfMovies } from "../../../types/Movies";
-import { ResponseOfShows } from "../../../types/Shows";
+import { useDiscoverMovies } from "../../../hooks/useDiscoverMovies";
+import { useDiscoverShows } from "../../../hooks/useDiscoverShows";
 import { MovieCard } from "../../MovieCard/MovieCard";
 import { ShowCard } from "../../ShowCard/ShowCard";
 import "./Home.css";
 
 export const Home = () => {
-  const [movies, setMovies] = useState<ResponseOfMovies>();
-  const [tvShows, setTvShows] = useState<ResponseOfShows>();
-
-  useEffect(() => {
-    discoverMovies().then((data) => setMovies(movies));
-  }, []);
-
-  useEffect(() => {
-    discoverShows().then((data) => setTvShows(data));
-  }, []);
+  const { movies } = useDiscoverMovies();
+  const { tvShows } = useDiscoverShows();
 
   return (
     <div className="homePage">
