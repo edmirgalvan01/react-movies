@@ -1,0 +1,13 @@
+.listOfCards {
+  display: flex;
+  gap: 10px;
+  min-height: 380px;
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.listOfCardsWithTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

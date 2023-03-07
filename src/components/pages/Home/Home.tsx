@@ -1,7 +1,10 @@
-import { useDiscoverMovies } from "../../../hooks/useDiscoverMovies";
-import { useDiscoverShows } from "../../../hooks/useDiscoverShows";
+import { ListOfCardsWithTitle } from "../../ListOfCards/ListOfCards";
 import { MovieCard } from "../../MovieCard/MovieCard";
 import { ShowCard } from "../../ShowCard/ShowCard";
+
+import { useDiscoverMovies } from "../../../hooks/useDiscoverMovies";
+import { useDiscoverShows } from "../../../hooks/useDiscoverShows";
+
 import "./Home.css";
 
 export const Home = () => {
@@ -11,19 +14,17 @@ export const Home = () => {
   return (
     <div className="homePage">
       <h1>React Movies TS</h1>
-      <ul className="listOfCards">
-        <h2>Descubre nuevas peliculas</h2>
+      <ListOfCardsWithTitle title="Descubre nuevas peliculas">
         {movies?.results.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
-      </ul>
+      </ListOfCardsWithTitle>
 
-      <ul className="listOfCards">
-        <h2>Descubre nuevas series</h2>
+      <ListOfCardsWithTitle title="Descubre nuevas series">
         {tvShows?.results.map((show) => (
           <ShowCard key={show.id} show={show} />
         ))}
-      </ul>
+      </ListOfCardsWithTitle>
     </div>
   );
 };
