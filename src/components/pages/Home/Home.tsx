@@ -1,6 +1,7 @@
 import { ListOfCardsWithTitle } from "../../ListOfCards/ListOfCards";
 import { MovieCard } from "../../MovieCard/MovieCard";
 import { ShowCard } from "../../ShowCard/ShowCard";
+import { Header } from "../../Header/Header";
 
 import { useDiscoverMovies } from "../../../hooks/useDiscoverMovies";
 import { useDiscoverShows } from "../../../hooks/useDiscoverShows";
@@ -13,7 +14,7 @@ export const Home = () => {
 
   return (
     <div className="homePage">
-      <h1>React Movies TS</h1>
+      <Header />
       <ListOfCardsWithTitle title="Descubre nuevas peliculas">
         {movies?.results.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
