@@ -7,6 +7,7 @@ import { useDiscoverMovies } from "../../../hooks/useDiscoverMovies";
 import { useDiscoverShows } from "../../../hooks/useDiscoverShows";
 
 import "./Home.css";
+import { Filters } from "../../Filters/Filters";
 
 export const Home = () => {
   const { movies } = useDiscoverMovies();
@@ -15,6 +16,7 @@ export const Home = () => {
   return (
     <div className="homePage">
       <Header />
+      <Filters />
       <ListOfCardsWithTitle title="Descubre nuevas peliculas">
         {movies?.results.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
