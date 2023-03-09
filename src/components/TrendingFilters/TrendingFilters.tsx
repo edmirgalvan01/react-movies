@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useFilterMainMovie } from "../../hooks/useFilterMainMovie";
 import "./TrendingFilters.css";
 
 export const TrendingFilters = () => {
@@ -7,6 +8,8 @@ export const TrendingFilters = () => {
     trending: false,
     latest: false,
   });
+
+  const { setFilter } = useFilterMainMovie();
 
   const handleClick = (key: string) => {
     const newObject = {};
@@ -17,6 +20,7 @@ export const TrendingFilters = () => {
       }
     }
     newObject[key] = true;
+    setFilter(key);
     setActive(newObject);
   };
 
