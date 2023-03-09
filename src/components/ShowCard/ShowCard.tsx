@@ -17,7 +17,6 @@ export const ShowCard = ({ show }: Props) => {
   return (
     <li className="movieCard" onClick={handleClick}>
       <img src={imgSrc} alt={imgAlt} />
-      <strong>{show.name}</strong>
     </li>
   );
 };

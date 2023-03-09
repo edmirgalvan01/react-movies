@@ -4,5 +4,7 @@
   gap: 10px;
 }
 .movieCard img {
-  max-width: 200px;
+  height: 220px;
+  width: 150px;
+  border-radius: 20px 8px;
 }
