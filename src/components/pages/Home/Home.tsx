@@ -1,14 +1,15 @@
+import { TrendingFilters } from "../../TrendingFilters/TrendingFilters";
 import { ListOfCardsWithTitle } from "../../ListOfCards/ListOfCards";
+import { MainMovie } from "../../MainMovie/MainMovie";
 import { MovieCard } from "../../MovieCard/MovieCard";
 import { ShowCard } from "../../ShowCard/ShowCard";
+import { Filters } from "../../Filters/Filters";
 import { Header } from "../../Header/Header";
 
 import { useDiscoverMovies } from "../../../hooks/useDiscoverMovies";
 import { useDiscoverShows } from "../../../hooks/useDiscoverShows";
 
 import "./Home.css";
-import { Filters } from "../../Filters/Filters";
-import { TrendingFilters } from "../../TrendingFilters/TrendingFilters";
 
 export const Home = () => {
   const { movies } = useDiscoverMovies();
@@ -19,6 +20,7 @@ export const Home = () => {
       <Header />
       <Filters />
       <TrendingFilters />
+      <MainMovie />
       <ListOfCardsWithTitle title="Descubre nuevas peliculas">
         {movies?.results.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />

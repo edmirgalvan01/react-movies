@@ -1,0 +1,7 @@
+.mainMovie {
+  width: 320px;
+  height: 130px;
+  background-color: red;
+  margin: 0 auto;
+  border-radius: 20px 8px;
+}
