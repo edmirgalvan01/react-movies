@@ -14,3 +14,21 @@ export const getMovieDetails = async (
   const response = await data.json();
   return response;
 };
+
+export const getPopularMovies = async (): Promise<ResponseOfMovies> => {
+  const data = await fetch(`${API_URL}/movie/popular?api_key=${API_KEY}`);
+  const response = await data.json();
+  return response;
+};
+
+export const getTrendingMovies = async (): Promise<ResponseOfMovies> => {
+  const data = await fetch(`${API_URL}/trending/movie/day?api_key=${API_KEY}`);
+  const response = await data.json();
+  return response;
+};
+
+export const getLatestMovie = async (): Promise<DetailsOfMovieType> => {
+  const data = await fetch(`${API_URL}/movie/latest?api_key=${API_KEY}`);
+  const response = await data.json();
+  return response;
+};
