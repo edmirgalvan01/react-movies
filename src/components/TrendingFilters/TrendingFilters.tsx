@@ -5,7 +5,7 @@ export const TrendingFilters = () => {
   const [active, setActive] = useState<{}>({
     popular: true,
     trending: false,
-    recent: false,
+    latest: false,
   });
 
   const handleClick = (key: string) => {
@@ -37,8 +37,8 @@ export const TrendingFilters = () => {
         Tendencia
       </button>
       <button
-        className={buttonClassName("recent")}
-        onClick={() => handleClick("recent")}
+        className={buttonClassName("latest")}
+        onClick={() => handleClick("latest")}
       >
         Reciente
       </button>
