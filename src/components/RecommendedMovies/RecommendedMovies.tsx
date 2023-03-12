@@ -7,7 +7,10 @@ export const RecommendedMovies = () => {
   const { movies } = useDiscoverMovies();
 
   return (
-    <ListOfCardsWithTitle title="Recomendados para ti">
+    <ListOfCardsWithTitle
+      title="Recomendados para ti"
+      link="/peliculas-recomendadas"
+    >
       {movies?.results.map((movie) => (
         <MovieCard key={movie.id} movie={movie} />
       ))}

@@ -1,6 +1,6 @@
 import { RecommendedMovies } from "../../RecommendedMovies/RecommendedMovies";
 import { TrendingFilters } from "../../TrendingFilters/TrendingFilters";
-import { TopRatedMovies } from "../../TopRatedMovies/TopRatedMovies";
+import { DiscoverNewShows } from "../../DiscoverNewShows/DiscoverNewShows";
 import { ListOfGenres } from "../../ListOfGenres/ListOfGenres";
 import { MainMovie } from "../../MainMovie/MainMovie";
 import { Filters } from "../../Filters/Filters";
@@ -17,7 +17,7 @@ export const Home = () => {
       <MainMovie />
       <ListOfGenres />
       <RecommendedMovies />
-      <TopRatedMovies />
+      <DiscoverNewShows />
     </div>
   );
 };
