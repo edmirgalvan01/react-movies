@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { RecommendedMoviesPage } from "./components/pages/RecommendedMoviesPage/RecommendedMoviesPage";
 import { RecommendedShowsPage } from "./components/pages/RecommendedShowsPage/RecommendedShowsPage";
+import { SearchPage } from "./components/pages/SearchPage/SearchPage";
 import { MoviePage } from "./components/pages/MoviePage/MoviePage";
 import { ShowPage } from "./components/pages/ShowPage/ShowPage";
 import { Home } from "./components/pages/Home/Home";
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
   {
     path: "/descubre-shows",
     element: <RecommendedShowsPage />,
+  },
+  {
+    path: "/buscar",
+    element: <SearchPage />,
   },
   {
     path: "/show/:id",
