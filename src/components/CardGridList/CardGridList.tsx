@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 import type { MovieResponseType } from "../../types/Movies";
 import type { ShowResponseType } from "../../types/Shows";
 
@@ -6,6 +8,10 @@ import { ShowCard } from "../ShowCard/ShowCard";
 
 import "./CardGridList.css";
 
+interface Props {
+  children: ReactNode;
+}
+
 interface MovieProps {
   listOfMovies?: Array<MovieResponseType>;
 }
@@ -13,6 +19,10 @@ interface MovieProps {
 interface ShowProps {
   listOfShows?: Array<ShowResponseType>;
 }
+
+export const CardGridList = ({ children }: Props) => {
+  return <div className="cardGridList">{children}</div>;
+};
 
 export const MovieGridList = ({ listOfMovies }: MovieProps) => {
   return (
