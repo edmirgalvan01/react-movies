@@ -1,4 +1,8 @@
-import type { DetailsOfMovieType, ResponseOfMovies } from "../types/Movies";
+import type {
+  DetailsOfMovieType,
+  ResponseOfMovies,
+  SearchResponseType,
+} from "../types/Movies";
 import { API_KEY, API_URL } from "../../consts";
 
 export const discoverMovies = async (): Promise<ResponseOfMovies> => {
@@ -29,6 +33,12 @@ export const getTrendingMovies = async (): Promise<ResponseOfMovies> => {
 
 export const getLatestMovie = async (): Promise<DetailsOfMovieType> => {
   const data = await fetch(`${API_URL}/movie/latest?api_key=${API_KEY}`);
+  const response = await data.json();
+  return response;
+};
+
+export const searchAll = async (query: string): Promise<SearchResponseType> => {
+  const data = await fetch(`${API_URL}/find/${query}?api_key=${API_KEY}`);
   const response = await data.json();
   return response;
 };

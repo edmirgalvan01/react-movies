@@ -1,3 +1,5 @@
+import { ShowResponseType } from "./Shows";
+
 export type ResponseOfMovies = {
   page: number;
   results: Array<MovieResponseType>;
@@ -20,6 +22,17 @@ export type MovieResponseType = {
   vote_count: number;
   video: boolean;
   vote_average: number;
+};
+
+export type SearchResponseType = {
+  movie_results: Array<MovieResponseType>;
+  person_results: Array<{
+    profile_path?: string;
+    adult: boolean;
+    id: number;
+    // known_for: {} | {}
+  }>;
+  tv_results: Array<ShowResponseType>;
 };
 
 export type DetailsOfMovieType = {
