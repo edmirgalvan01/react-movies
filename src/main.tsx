@@ -2,9 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import { Home } from "./components/pages/Home/Home";
-import { ShowPage } from "./components/pages/ShowPage/ShowPage";
+import { RecommendedMoviesPage } from "./components/pages/RecommendedMoviesPage/RecommendedMoviesPage";
+import { RecommendedShowsPage } from "./components/pages/RecommendedShowsPage/RecommendedShowsPage";
 import { MoviePage } from "./components/pages/MoviePage/MoviePage";
+import { ShowPage } from "./components/pages/ShowPage/ShowPage";
+import { Home } from "./components/pages/Home/Home";
 
 import "./index.css";
 
@@ -19,11 +21,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/peliculas-recomendadas",
-    element: <h1>Peliculas recomendadas</h1>,
+    element: <RecommendedMoviesPage />,
   },
   {
     path: "/descubre-shows",
-    element: <h1>Descubre nuevos shows</h1>,
+    element: <RecommendedShowsPage />,
   },
   {
     path: "/show/:id",
