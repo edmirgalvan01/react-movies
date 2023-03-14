@@ -37,8 +37,12 @@ export const getLatestMovie = async (): Promise<DetailsOfMovieType> => {
   return response;
 };
 
-export const searchAll = async (query: string): Promise<SearchResponseType> => {
-  const data = await fetch(`${API_URL}/find/${query}?api_key=${API_KEY}`);
+export const searchMovies = async (
+  query: string
+): Promise<SearchResponseType> => {
+  const data = await fetch(
+    `${API_URL}/search/movie?api_key=${API_KEY}&query=${query}`
+  );
   const response = await data.json();
   return response;
 };
