@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { searchAll } from "../services/movies.service";
+import { searchMovies } from "../services/movies.service";
 import { SearchResponseType } from "../types/Movies";
 
-export const useSearchAll = (query: string) => {
+export const useSearchAll = () => {
   const [response, setResponse] = useState<SearchResponseType>();
+  const [query, setQuery] = useState<string>("");
 
   useEffect(() => {
-    searchAll(query).then((data) => setResponse(data));
+    searchMovies(query).then((data) => setResponse(data));
   }, []);
 
-  return { response };
+  return { response, setQuery };
 };
