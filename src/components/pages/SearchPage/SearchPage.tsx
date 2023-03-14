@@ -1,9 +1,10 @@
+import { useSearchAll } from "../../../hooks/useSearchMovies";
 import { CardGridList } from "../../CardGridList/CardGridList";
 import { Header } from "../../Header/Header";
 import "./SearchPage.css";
 
 export const SearchPage = () => {
-  const handleChange = (event: React.FormEvent<HTMLInputElement>) => {};
+  const { response, setQuery } = useSearchAll();
 
   return (
     <>
@@ -12,7 +13,7 @@ export const SearchPage = () => {
         <input
           type="text"
           placeholder="Avengers, Star Wars..."
-          onChange={handleChange}
+          onChange={(event) => setQuery(event.target.value)}
         />
         <CardGridList>
           <h2>No se encontraron resultados</h2>
