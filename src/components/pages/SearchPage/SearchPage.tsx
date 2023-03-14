@@ -1,10 +1,11 @@
-import { useSearchAll } from "../../../hooks/useSearchMovies";
+import { useSearchMovies } from "../../../hooks/useSearchMovies";
 import { CardGridList } from "../../CardGridList/CardGridList";
 import { Header } from "../../Header/Header";
+import { MovieCard } from "../../MovieCard/MovieCard";
 import "./SearchPage.css";
 
 export const SearchPage = () => {
-  const { response, setQuery } = useSearchAll();
+  const { response, setQuery } = useSearchMovies();
 
   return (
     <>
@@ -16,7 +17,15 @@ export const SearchPage = () => {
           onChange={(event) => setQuery(event.target.value)}
         />
         <CardGridList>
-          <h2>No se encontraron resultados</h2>
+          {response?.results.length === 0 ? (
+            <h2>No se encontraron resultados</h2>
+          ) : (
+            <>
+              {response?.results.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+              ))}
+            </>
+          )}
         </CardGridList>
       </div>
     </>
