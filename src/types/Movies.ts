@@ -47,8 +47,8 @@ export type DetailsOfMovieType = {
   homepage: string;
   id: number;
   imdb_id?: string;
-  minLength: 9;
-  maxLength: 9;
+  minLength: number;
+  maxLength: number;
   original_language: string;
   original_title: string;
   overview: string;
