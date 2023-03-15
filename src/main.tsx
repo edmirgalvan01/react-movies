@@ -10,6 +10,7 @@ import { ShowPage } from "./components/pages/ShowPage/ShowPage";
 import { Home } from "./components/pages/Home/Home";
 
 import "./index.css";
+import { CategoryPage } from "./components/pages/CategoryPage/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/show/:id",
     element: <ShowPage />,
+  },
+  {
+    path: "/category/:categoryName",
+    element: <CategoryPage />,
   },
 ]);
 

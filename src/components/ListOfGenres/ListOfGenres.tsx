@@ -8,7 +8,7 @@ export const ListOfGenres = () => {
   return (
     <div className="listOfGenres">
       {genres?.genres.map((gen) => (
-        <Link key={gen.id} to="/" className="genreCard">
+        <Link key={gen.id} to={`/category/${gen.name}`} className="genreCard">
           {gen.name}
         </Link>
       ))}
