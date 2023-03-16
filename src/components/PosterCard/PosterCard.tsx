@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import "./PosterCard.css";
 
 interface Props {
   path?: string;
@@ -17,7 +18,7 @@ export const PosterCard = ({ path }: Props) => {
   const colorFavorite = isFavorite ? "red" : "#eee";
 
   return (
-    <div className="moviePage--poster" style={{ background: background }}>
+    <div className="PosterCard" style={{ background: background }}>
       <IoIosArrowBack size={25} onClick={() => navigate(-1)} />
       <AiOutlineHeart
         color={colorFavorite}
