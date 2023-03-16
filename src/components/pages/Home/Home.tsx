@@ -1,13 +1,13 @@
 import { RecommendedMovies } from "../../RecommendedMovies/RecommendedMovies";
-import { TrendingFilters } from "../../TrendingFilters/TrendingFilters";
 import { DiscoverNewShows } from "../../DiscoverNewShows/DiscoverNewShows";
+import { FilteredMovie } from "../../FilteredMovie/FilteredMovie";
 import { ListOfGenres } from "../../ListOfGenres/ListOfGenres";
-import { MainMovie } from "../../MainMovie/MainMovie";
 import { Filters } from "../../Filters/Filters";
 import { Header } from "../../Header/Header";
 
-import "./Home.css";
 import { useGetGenreList } from "../../../hooks/useGetGenreList";
+
+import "./Home.css";
 
 export const Home = () => {
   const { genres } = useGetGenreList();
@@ -16,8 +16,7 @@ export const Home = () => {
     <div className="homePage">
       <Header />
       <Filters />
-      <TrendingFilters />
-      <MainMovie />
+      <FilteredMovie />
       <ListOfGenres genres={genres?.genres} />
       <RecommendedMovies />
       <DiscoverNewShows />
