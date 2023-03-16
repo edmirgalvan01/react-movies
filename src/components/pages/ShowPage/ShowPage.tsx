@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { AiOutlineHeart } from "react-icons/ai";
+import { ListOfGenres } from "../../ListOfGenres/ListOfGenres";
 import { useGetShowDetails } from "../../../hooks/useGetShowDetails";
 
 export const ShowPage = () => {
@@ -29,17 +30,7 @@ export const ShowPage = () => {
       <div className="moviePage--information">
         <h1>{show?.name}</h1>
         <h3 className="moviePage--rating">{show?.vote_average.toFixed(1)}</h3>
-        <div className="moviePage--listOfGenres">
-          {show?.genres.map((item) => (
-            <Link
-              key={item.id}
-              to={`/category/${item.name}`}
-              className="genreCard"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
+        <ListOfGenres genres={show?.genres} />
         <p className="moviePage--overview">{show?.overview}</p>
       </div>
     </section>

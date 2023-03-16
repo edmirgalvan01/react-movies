@@ -7,15 +7,18 @@ import { Filters } from "../../Filters/Filters";
 import { Header } from "../../Header/Header";
 
 import "./Home.css";
+import { useGetGenreList } from "../../../hooks/useGetGenreList";
 
 export const Home = () => {
+  const { genres } = useGetGenreList();
+
   return (
     <div className="homePage">
       <Header />
       <Filters />
       <TrendingFilters />
       <MainMovie />
-      <ListOfGenres />
+      <ListOfGenres genres={genres?.genres} />
       <RecommendedMovies />
       <DiscoverNewShows />
     </div>
